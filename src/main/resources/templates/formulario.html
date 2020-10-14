@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:insert="~{header :: head}">
+		<meta charset="utf-8">
+		<title>Projeto Web Zero</title>
+	</head>
+	
+	<body>
+		<div class="container">
+			<h1>Formulario</h1>
+			<a href="/" class="btn btn-primary">Voltar</a>
+			<br/>
+			<br/>
+			<br/>
+			<form action="salvar" method="post">
+			
+				<div class="alert alert-danger"
+					th:if="${not #strings.isEmpty(erros)}" >
+					<div th:each="erro : ${erros}">
+						<span th:text="${erro.getDefaultMessage()}"></span>
+					</div>				
+				</div>
+			
+				<div class="form-group">
+					<label>Descrição do Projeto</label>
+					<input type="text" class="form-control" id="descricao" name="descricao" th:value="${projeto.descricao}"/>
+					
+					<input type="hidden" id="id" name="id" th:value="${projeto.id}" th:if="${projeto != null}"/>
+				</div>
+			
+				<button type="submit" class="btn btn-primary" >Salvar</button>
+			</form>
+			
+			
+			<div th:insert="~{footer :: copy}"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html 	xmlns:th="http://thymeleaf.org">
+	<head th:insert="~{header :: head}">
+		<meta charset="utf-8">
+		<title>Projeto Web Zero</title>
+	</head>
+	
+	<body>
+	
+		<div class="container">
+			<h1>Cadastro de Funcionario</h1>
+			
+			<a href="/" class="btn btn-primary">Voltar</a>
+			<br/>
+			<p ></p>
+			<br/>
+			<form action="salvarFuncionario" method="post">
+			
+			<div class="alert alert-danger" th:if="${not #strings.isEmpty(erros)}">
+			<div th:each="erro:${erros}">
+				<span th:text="${erro.getDefaultMessage()}"></span>
+			</div>
+			</div>
+			
+			<div class="form-group">
+			
+			<input type="text" id="id" name="id" th:value="${fun.id}" th:if="${fun != null}"/>
+			
+			<label>Nome</label>
+			<input type="text" class="form-control" id="nome" name="nome" />
+			<label>CPF</label>
+			<input type="text" class="form-control" id="cpf" name="cpf" />
+			
+			<label>Salario</label>
+			<input type="text" class="form-control" id="salario" name="salario"/>
+			<label>Data Adminssão</label>
+			<input  type="date"   class="form-control" id="dataAdmissao" name="dataAdmissao"/>
+			
+			
+		
+			</div>
+			
+			
+			<button >Salvar</button>
+			</form>
+			
+			</div>
+	
+	</body>
+</html>

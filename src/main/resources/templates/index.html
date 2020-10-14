@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:insert="~{header :: head}">
+		<meta charset="utf-8">
+		<title>Projeto Web Zero</title>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="image-top">
+				<img src="https://ead.faculdadefacec.edu.br/pluginfile.php/1/theme_adaptable/logo/1597446278/Logo%20FACEC%20Amarelo_mm.png">
+			</div>
+			<h1>
+				<span th:text="${nome}"></span>
+			</h1>
+			<a href="/projeto" class="btn btn-primary">Listar Projetos</a>
+			<a href="/formulario" class="btn btn-primary">Cadastrar Projeto</a>
+			<a href="/funcionario" class="btn btn-primary">Listar Funcionario</a>
+			<a href="/cadFuncionario" class="btn btn-primary">Cadastrar Funcionario</a>
+			<div th:insert="~{footer :: copy}"></div>
+		</div>
+	</body>
+</html>
